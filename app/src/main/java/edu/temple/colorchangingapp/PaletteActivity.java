@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,26 +18,31 @@ import java.util.ArrayList;
 
 public class PaletteActivity extends AppCompatActivity {
 
+    GridView gridview;
+    String[] color = {"RED","YELLOW","GREEN","LIGHTGREY","BLUE","GRAY","WHITE","BLACK", "CYAN","YELLOW","MAGENTA","RED"};
+    public static final String colorSelected = "Color";
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (getSupportActionBar()!= null)
-            getSupportActionBar().setTitle("PaletteActivity");
+        getSupportActionBar().setTitle(R.string.PaletteActivity);
 
-        String[] color = {"RED","YELLOW","GREEN","LIGHTGREY","BLUE","GRAY","WHITE","BLACK", "CYAN","DRAKGREY","MAGENTA","RED"};
+        Resources res = getResources();
+        final String[] gridLabels = res.getStringArray(R.array.MyArray);
 
-        final GridView gridview = (GridView) findViewById(R.id.gridview);
-        final ColorAdapter adapter = new ColorAdapter(this, color);
+        gridview = findViewById(R.id.gridview);
+        BaseAdapter adapter = new ColorAdapter(this,gridLabels);
         gridview.setAdapter(adapter);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                intent.putExtra("Color", position); // put image data in Intent
-                startActivity(intent); // start Intent
+                Intent intent = new Intent(PaletteActivity.this,CanvasActivity.class);
+                intent.putExtra("colors",color[position]);
+                intent.putExtra("Mylabel", gridLabels[position]);
+                startActivityForResult(intent,000);
             }
         });
     }
