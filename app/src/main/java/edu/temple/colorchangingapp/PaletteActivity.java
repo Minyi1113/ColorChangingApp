@@ -21,7 +21,7 @@ public class PaletteActivity extends AppCompatActivity {
     GridView gridview;
     String[] color = {"RED","YELLOW","GREEN","LIGHTGREY","BLUE","GRAY","WHITE","BLACK", "CYAN","YELLOW","MAGENTA","RED"};
     public static final String colorSelected = "Color";
- 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
