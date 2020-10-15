@@ -21,7 +21,7 @@ public class ColorAdapter extends BaseAdapter {
         this.color = color;
 
 
-        colors = new int[12];
+        colors = new int[13];
         colors[0] = Color.RED;
         colors[1] = Color.YELLOW;
         colors[2] = Color.GREEN;
@@ -31,7 +31,7 @@ public class ColorAdapter extends BaseAdapter {
         colors[6] = Color.WHITE;
         colors[7] = Color.BLACK;
         colors[8] = Color.CYAN;
-        colors[9] = Color.DKGRAY;
+        colors[9] = Color.YELLOW;
         colors[10] = Color.MAGENTA;
         colors[11] = Color.RED;
 

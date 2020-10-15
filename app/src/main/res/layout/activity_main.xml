@@ -11,17 +11,28 @@
 
     <GridView
         android:id="@+id/gridview"
-        android:layout_width="413dp"
-        android:layout_height="590dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="399dp"
+        android:layout_height="482dp"
+        android:layout_marginBottom="64dp"
         android:columnWidth="100dp"
         android:gravity="center"
         android:horizontalSpacing="0dp"
         android:numColumns="3"
-        android:verticalSpacing="0dp"
         android:orientation="horizontal"
+        android:verticalSpacing="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="181dp"
+        android:text="@string/labletext"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
